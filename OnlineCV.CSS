@@ -1,0 +1,61 @@
+/* some properties for body design */
+body{
+    border: 5px double rgb(255, 0, 0);
+    border-radius: 20px;
+    padding: 4% 5%;
+    margin: 5% 15%;
+    font-family: sans-serif;
+    line-height: 30px;
+    background-color:rgb(216, 218, 214) ;
+    outline: #000000f1 solid 20px;
+}  
+
+/* CV logo properties*/
+#main-subject{
+    color: aliceblue;
+    background-color: #000000;
+    border: 2px solid #ff0000;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+/* the rest is content properties */
+ .header,.communication ,.content-box{
+    display: flex;
+    justify-content:space-between;
+    border: 2px solid red ;
+    padding: 2%;
+    margin-bottom: 1.5%;
+    background-clip: padding-box;
+    padding:red ;
+    outline: #020202f1 solid 3px;
+}
+
+h2{
+    border-bottom: 4px solid black ;
+    color: aliceblue;
+    font-style:italic;
+    text-shadow: 2px 4px 20px rgb(15, 15, 15);
+}
+
+.contact-info> ul{
+    line-height: 40px;
+    list-style-type:none;
+    padding: 0;
+    display:flex; flex-direction: column-reverse;    
+}
+
+.profile, .abilities{
+    width: 500px;
+    padding: 2%;
+}
+
+a:link {
+    text-decoration: none;
+} 
+a:visited {
+    text-decoration: none;
+} 
+a:hover {
+    text-decoration: underline;
+}
