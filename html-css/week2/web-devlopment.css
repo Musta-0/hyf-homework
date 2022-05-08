@@ -100,12 +100,7 @@ footer iframe{
     padding-bottom: 20px;
 }
 
-/* For mobile phones: */
-[class*="col"] {
-    width: 90%;
-}
-
-/* For desktop: */
+/* For Mobile: */
 @media screen and (min-width:900px) {
     header {padding-left: 15%; text-align: left;}
     .column-0 a {float: left; text-align: center;}
