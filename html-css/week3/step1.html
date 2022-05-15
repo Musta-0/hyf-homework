@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup-step1</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="step1.css" />
+</head>
+
+<body>
+    <header>
+        <!--logo-->
+        <img class="logo" src="logo.png" alt="my logo ">
+
+        <!--navigation-->
+        <nav>
+            <a href="https://htmlpreview.github.io/?"> Step 1</a>
+            <a href="https://htmlpreview.github.io/?"> Step 2</a>
+            <a href="https://htmlpreview.github.io/?"> Step 3</a>
+        </nav>
+    </header>
+    
+    <!--signup fields -->
+    <section>
+        <h1>Sign up to yourcustomtailor.com</h1>
+        <p>We can't wait to help you improve your life-style and gain the attention from people around
+            you!</p>
+        <p>
+        Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy <br>
+        picking the best offers that match your preferences and style. Every week we will send you a <br>
+        hand-picked selection - we just need to know a few details about your first…</p>
+    </section>
+    <section>
+        <h2>Step 1/4 - tell us who you are?</h2>
+        <h4>Progress</h4>
+        <div class="progress">
+            <div class="progress-level"></div>
+        </div>
+        <p>Nice to meet you. Let's spend a minute to get to know each other? Please enter the following:</p>
+        <form action="step2.html" method="get">
+            <label for="first-name">First name*</label>
+            <input type="text" name="first name" id="first-name" placeholder="Mustafa" required>
+            <label for="last-name">Last name*</label>
+            <input type="text" name="last name" id="last-name" placeholder="Hassam" required><br>
+            <label for="country">Country</label>
+            <select name="country">
+                <option value="Denmark">Denmark</option>
+                <option value="UK">Uk</option>
+                <option value="Germany">Germany</option>
+            </select><br>
+            <label for="street-address">Street address*</label>
+            <input type="text" name="street address" id="street-address" placeholder="halemtgade 32" required>
+            <label for="post-code">Post code*</label>
+            <input type="text" name="post code" id="post-code" placeholder="4322" pattern="(?=.*\d).{4}" title="only 4 numbers" required>
+
+            <div class="shipping-adress">
+                <br>
+                <p>Use the same address for billing and shipping? Uncheck below to fill out a separate shipping address</p>
+                <label>Shipping address</label>
+                <input type="checkbox" checked>
+                <div class="shipping-ad">
+                    <p>Shipping address</p>
+
+                    <label for="first-name2">First name*</label>
+                    <input type="text" name="first name" id="first-name2" placeholder="Math">
+                    <label for="last-name2">Last name*</label>
+                    <input type="text" name="last name" id="last-name2" placeholder="Tomas"><br>
+                    <label for="country">Country</label>
+                    <select name="country" id="country">
+                        <option value="Denmark">Denmark</option>
+                        <option value="UK">UK</option>
+                        <option value="Germany">Germany</option>
+                    </select><br>
+                    <label for="street-address2">Street address*</label>
+                    <input type="text" name="street address" id="street-address2">
+                    <label for="post-code2">Post code*</label>
+                    <input type="text" name="post code" id="post-code2">
+
+                </div>
+                <div class="add-text">
+                    <label class="description">Profile description</label>
+                    <label class="description">
+                        Please provide a short
+                        description of yourself to be
+                        displayed on our social
+                        community pages.
+                    </label>
+                    <textarea name="description" rows="8" cols="60"  maxlength="500"></textarea>
+                </div>
+            </div>
+            <input type="submit" onclick="location" value="Next step" class="next">
+        </form>
+    </section>   
+</body>
+</html>
