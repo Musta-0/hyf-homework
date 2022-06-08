@@ -8,7 +8,7 @@ const  yearFuture = 2058;
 
 // how old will you be
 const age = yearFuture - yearOfBirth;
-console.log("you will be "+ age + " years old in " + yearFuture + "." )
+console.log(`you will be ${age} years old in ${yearFuture}.`)
 
 
 //Goodboy-Oldboy (A dog age calculator)
@@ -19,14 +19,15 @@ const dogYearOfBirth = 2017;
 const  dogYearFuture = 2027;
 
 // how old will the dog be
-const dogYear = dogYearFuture - dogYearOfBirth;
+const dogYear = (dogYearFuture - dogYearOfBirth)*7;
 
 const shouldShowResultInDogYears = true
 
 if (shouldShowResultInDogYears){
-    console.log("Your dog will be "+ dogYear*7 + " dog years old in " + dogYearFuture + "." )
-}else{
-    console.log("Your dog will be "+ dogYear + " human years old in " + dogYearFuture + "." )
+    console.log (`Your dog will be ${dogYear} dog years old in ${dogYearFuture}.`);
+} 
+else{
+    console.log(`Your dog will be ${dogYear/7} human years old in ${dogYearFuture}.`);
 }
 
 
