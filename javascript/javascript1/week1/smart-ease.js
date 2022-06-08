@@ -33,10 +33,10 @@ else{
 
 // Housey pricey (A house price estimator)
 //Peter's house
-const volumeInMeters = 8*10*10;
-const gardenSizeInM2 = 100;
+const volumeInMetersPeterHouse = 8*10*10;
+const gardenSizeInM2PeterHouse = 100;
 
-const housePricePeter = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
+const housePricePeter = volumeInMetersPeterHouse * 2.5 * 1000 + gardenSizeInM2PeterHouse * 300;
 if (housePricePeter< 2500000){
     console.log("Peter paid too much")
 }else{
@@ -44,12 +44,12 @@ if (housePricePeter< 2500000){
 }
 
 // Julia's house
-const volumeInMetersnr2 = 5*11*8;
-const gardenSizeInM2nr2 = 70;
+const volumeInMetersJuliaHouse = 5*11*8;
+const gardenSizeInM2JuliaHouse = 70;
 
-const housePriceJulia = volumeInMetersnr2 * 2.5 * 1000 + gardenSizeInM2nr2 * 300;
+const housePriceJulia = volumeInMetersJuliaHouse * 2.5 * 1000 + gardenSizeInM2JuliaHouse * 300;
 if (housePriceJulia< 1000000){
-    console.log("Julia paid too much")
+    console.log('Julia paid too much')
 }else{
-    console.log("Julia paid good price for the house")
+    console.log('Julia paid good price for the house')
 }
