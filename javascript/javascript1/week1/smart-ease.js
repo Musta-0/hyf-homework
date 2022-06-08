@@ -1,14 +1,14 @@
 // Age-ify (A future age calculator)
 
-// year of my birth
+// year of birth
 const yearOfBirth = 2000;
 
 // future year
 const  yearFuture = 2058;
 
-// how old will i be
+// how old will you be
 const age = yearFuture - yearOfBirth;
-console.log("I will be "+ age + " years old in " + yearFuture + "." )
+console.log("you will be "+ age + " years old in " + yearFuture + "." )
 
 
 //Goodboy-Oldboy (A dog age calculator)
