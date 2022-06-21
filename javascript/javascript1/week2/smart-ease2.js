@@ -1,135 +1,124 @@
 //Flight booking fullname function
 
-function getFullname (firstname, surname, useFormalName) {
-    if (useFormalName == true) {
-        return "Lord " + firstname + " " + surname;
+function getFullname(firstname, surname, useFormalName, gender) {
+    if (typeof firstname !== 'string' || firstname === '') {
+       throw new Error('First name must be a non-empty string');
+    }
+    if (typeof surname !== 'string' || surname === '') {
+        throw new Error('sur name must be a non-empty string');
+    } 
+
+    if (useFormalName) { 
+        if (gender) {
+            if (gender === "male"){
+                return `Lord ${firstname} ${surname}`;
+            }
+            else if (gender === "female"){
+                return `Lady ${firstname} ${surname}`;
+            }
+            else{
+                throw new Error('Gender must be male or female')
+            } 
+        }
+        else if (gender===''){
+            throw new Error('Gender must be a non-empty string')
+        }
+        else{
+            return `Lord ${firstname} ${surname}`;
+        }
+    }
+    else if (useFormalName === '') {
+            throw new Error('Formal name must be a non-empty string')        
     }
     else {
-        return firstname + " " + surname;
+        return `${firstname} ${surname}`;
     }
 }
+console.log(getFullname("Jad", "Sam", "sas", "female"));//Log out 
 
 //two variables assigned to getFullname function.
-let fullname1 = getFullname("Math", "Anton", true);
-let fullname2= getFullname("Mia", "David");
+const fullname1 = getFullname("Benjamin", "Hughes", true);
+const fullname2= getFullname("Benjamin", "Hughes", false);
 
 //Log out the two fullname variables.
 console.log(fullname1);
 console.log(fullname2);
 
 
-//What do we do if useFormalName is not given as an argument?
-//But what if the person is a woman? Describe how you would fix the getFullname so it also works for women
-//below u can see what i did in those cases.
-
-/*
-function getFullname(firstName, surName, useFormalName, gender) {
-    if (typeof firstName !== 'string' || firstName === '') {
-       throw new Error('First name must be a non-empty string');
-    }
-     if (typeof surName !== 'string' || surName === '') {
-        throw new Error('last name must be a non-empty string');
-     }
-     
-    if (useFormalName) {
-
-        //question here, how can i specify (male and female) instead of string, so If something else is written except(male and female), error message shows
-         if (typeof gender !== 'string' || gender === '') {
-            throw new Error('gender must be a non-empty string');
-         }
-    
-        else if(gender==="male"){
-        return `Lord ${firstName} ${surName}`;
-        }
-        else if(gender==="female"){
-        return `Lady ${firstName} ${surName}`;
-        }
-    }
-    else {
-        return `${firstName} ${surName}`;
-    }
-}
-console.log(getFullname("Jad", "Sam", "male", "male"));//Log out 
-*/
 
 //Event application
-
-function getEventWeekday(Daysback) {
+function getEventWeekday(days) {    
+    const weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     const day = new Date();
-    const weekDays=["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    for (i = 0; i < weekDays.length; i++) {
-        if(Daysback>7){
-            day.setDate(Daysback + weekDays[2]);
-        return (weekDays[(day.setDate() + i) % 7]);
-
-        }else if(Daysback<7){
-        day.setDate(day.getDate() + Daysback);
-        return (weekDays[(day.getDay() + 4 + i) % 7]);
-        }
-    }
+    return weekDays[(day.getDay() + days) % 7]
 }
 
-  // With todays weekday a tuesday
-console.log(getEventWeekday(9)); // Logs out "Thursday"
-
-// With todays weekday a Friday
-console.log(getEventWeekday(2)); // Logs out "Sunday
-
+console.log(getEventWeekday(9));
 
 
 
 //Weather wear
-
 function getWear(temperature){
-    if (temperature<16){
-        return "pents and a jacket";
+    if (temperature < 16){
+        return "pants and a jacket";
     }
-    else if(temperature >=16 && temperature<=18){
-        return "shorts and light jacket " ;
+    else if (temperature > 18) {
+        return "shorts and a T-shirt";
     }
     else {
-        return "shorts and a T-shirt";
+        return "shorts and light jacket " ;
     }
 }
 console.log(getWear(0))
 
 
 
+
 //Student manager
 const class07Students = [];
+
 //addStudentToClass function
 function addStudentToClass(studentName) {
-    const newStudent=studentName
-    class07Students.push(studentName)
-    unwantedStudents=class07Students.length>6;
-
     if (typeof studentName !== 'string' || studentName === '') {
         throw new Error('Student name must be a non-empty string');
-     }
+    }
 
-     if (class07Students.length !== new Set(class07Students).size) {
+    if (class07Students.includes(studentName)) {
         throw new Error(`Student ${studentName} is already in the class`);
-     }
-     
-    if(class07Students.length>6){
-        if(newStudent=="Queen"){
+    }
+
+    class07Students.push(studentName);
+    
+    if (class07Students.length>6) {
+        if (studentName=="Queen") {
             class07Students.push()
-        }else if  (newStudent!=="Queen"){
+        }
+        else if (studentName!=="Queen") {
             throw new Error('Cannot add more students to class 07');
         }
-      }
-     return class07Students;
+    }
+    return class07Students;
 }
 
-
+//function for counting the number of students
 function getNumberOfStudents() {
     return class07Students.length;
 }
 
-
-console.log(addStudentToClass("Tommy "));
+console.log(addStudentToClass("Tommy"));
 
 console.log(addStudentToClass("Tom"));
 
 console.log(addStudentToClass("Sam"));
+
+console.log(addStudentToClass("Mark "));
+
+console.log(addStudentToClass("Jacy"));
+
+console.log(addStudentToClass("Davis"));
+
+console.log(addStudentToClass("Queen"));
+
 console.log(getNumberOfStudents())
+
+console.log(addStudentToClass("Toby"));
